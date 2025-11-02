@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('../images/pinkflower.avif');
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* === Alert === */
+.alert {
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.1);
+  color: #00ff3c;
+  border-left: 4px solid #28a745;
+}
+
+/* === Tombol Global === */
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  margin: 4px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.btn.primary {
+  background: rgba(0, 106, 255, 0.2);
+  color: white;
+}
+.btn.primary:hover {
+  background: rgba(0, 106, 255, 0.4);
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.6);
+}
+
+.btn.warning {
+  background: rgba(255, 191, 0, 0.2);
+  color: white;
+}
+.btn.warning:hover {
+  background: rgba(255, 191, 0, 0.4);
+  box-shadow: 0 0 12px rgba(255, 193, 7, 0.6);
+}
+
+.btn.danger {
+  background: rgba(255, 0, 0, 0.2);
+  color: white;
+}
+.btn.danger:hover {
+  background: rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 12px rgba(220, 53, 69, 0.6);
+}
+
+.btn.btn-back {
+  background: rgba(108, 117, 125, 0.2);
+  color: white;
+}
+.btn.btn-back:hover {
+  background: rgba(108, 117, 125, 0.4);
+  box-shadow: 0 0 12px rgba(108, 117, 125, 0.6);
+}
+
+/* === Tabel === */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.table th,
+.table td {
+  color: whitesmoke;
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+/* === Overlay Modal === */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close-modal {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.close-modal:hover {
+  opacity: 1;
+}
+
+/* === Form dalam Modal === */
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-group {
+  text-align: center;
+  margin-top: 20px;
+}
