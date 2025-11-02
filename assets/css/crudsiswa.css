@@ -187,3 +187,10 @@ input::placeholder {
   text-align: center;
   margin-top: 20px;
 }
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}

@@ -51,8 +51,11 @@ if (isset($_GET['edit'])) {
       </div>
     <?php endif; ?>
 
-    <a href="#" class="btn primary" onclick="openModal('tambah')">+ Tambah Data</a>
-
+    <div class="action-buttons">
+      <a href="../index.html" class="btn btn-back">← Kembali ke Beranda</a>
+      <a href="#" class="btn primary" onclick="openModal('tambah')">+ Tambah Data</a>
+    </div>
+    
     <table class="table">
       <thead>
         <tr>
