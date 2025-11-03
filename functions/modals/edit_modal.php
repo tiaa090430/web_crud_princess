@@ -29,8 +29,7 @@
       </div>
       <div class="form-group">
         <label>Tanggal Lahir</label>
-        <input type="date" name="tanggal_lahir" value="<?= htmlspecialchars($edit_tgl) ?>" required>
-      </div>
+<input type="text" name="tanggal_lahir" id="tanggal_lahir" class="flatpickr" placeholder="Pilih tanggal" required>      </div>
       <div class="btn-group">
         <button type="submit" class="btn primary">Simpan Perubahan</button>
         <a href="crudsiswa.php" class="btn btn-back">Batal</a>

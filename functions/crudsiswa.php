@@ -33,6 +33,9 @@ if (isset($_GET['edit'])) {
   <meta charset="UTF-8">
   <title>CRUD Siswa</title>
   <link rel="stylesheet" href="../assets/css/crudsiswa.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/id.js"></script>
 </head>
 <body>
   <div class="container">
@@ -88,11 +91,25 @@ if (isset($_GET['edit'])) {
     </table>
   </div>
 
-  <!-- 🔽 Include modal dari file terpisah -->
   <?php include 'modals/tambah_modal.php'; ?>
   <?php include 'modals/edit_modal.php'; ?>
 
   <script>
+    flatpickr(".flatpickr", {
+      dateFormat: "d-m-Y",
+      altInput: true,
+      altFormat: "d-m-Y",
+      locale: "id",
+      position: "auto",
+      allowInput: true,
+      disableMobile: false,
+      onOpen: function(selectedDates, dateStr, instance) {
+        // Force popup muncul di atas
+        instance.config.position = "above";
+        instance.redraw();
+      }
+    });
+
     function openModal(type) {
       document.getElementById('modal-' + type).classList.add('active');
     }

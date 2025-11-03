@@ -27,8 +27,7 @@
       </div>
       <div class="form-group">
         <label>Tanggal Lahir</label>
-        <input type="date" name="tanggal_lahir" required>
-      </div>
+<input type="text" name="tanggal_lahir" id="tanggal_lahir" class="flatpickr" placeholder="Pilih tanggal" required>      </div>
       <div class="btn-group">
         <button type="submit" class="btn primary">Simpan</button>
         <button type="button" class="btn btn-back" onclick="closeModal('tambah')">Batal</button>

@@ -130,6 +130,10 @@ h1 {
   max-width: 600px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   color: white;
+  /* ⭐ Jangan potong konten yang keluar */
+  overflow: visible !important;
+  position: relative;
+  z-index: 1000; /* pastikan modal di atas semua */
 }
 
 .modal-header {
@@ -176,6 +180,10 @@ input[type="date"] {
   font-size: 16px;
   background: rgba(0, 0, 0, 0.15);
   color: white;
+  /* ⭐ Solusi: force layering agar date picker muncul di atas */
+  transform: translateZ(0);
+  position: relative;
+  z-index: 1;
 }
 
 input::placeholder {
@@ -194,6 +202,7 @@ input::placeholder {
   flex-wrap: wrap;
 }
 
+/* === Date Picker Icon Putih & Popup === */
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1) brightness(2);
   cursor: pointer;
@@ -205,4 +214,26 @@ input[type="date"]::-moz-focus-inner {
 
 input[type="date"]:hover::-webkit-calendar-picker-indicator {
   filter: invert(1) brightness(3);
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 16px;
+    width: 98%;
+    max-width: 100%;
+  }
+
+  input[type="date"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    margin: 4px 0;
+  }
 }
