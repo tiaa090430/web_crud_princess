@@ -56,7 +56,7 @@ if (isset($_GET['edit'])) {
     <?php endif; ?>
 
     <div class="action-buttons">
-      <a href="../index.html" class="btn btn-back">← Kembali ke Beranda</a>
+      <a href="../pages/index.html" class="btn btn-back">← Kembali ke Beranda</a>
       <a href="#" class="btn primary" onclick="openModal('tambah')">+ Tambah Data</a>
     </div>
     
@@ -83,7 +83,7 @@ if (isset($_GET['edit'])) {
           <td><?= htmlspecialchars($s['TTL']) ?></td>
           <td>
             <a href="?edit=<?= $s['id'] ?>" class="btn warning">Edit</a>
-            <a href="hapus.php?id=<?= $s['id'] ?>" class="btn danger" onclick="return confirm('Yakin hapus?')">Hapus</a>
+            <a href="#" class="btn danger" onclick="openHapusModal(<?= $s['id'] ?>)">Hapus</a>
           </td>
         </tr>
         <?php endforeach; ?>
@@ -93,6 +93,21 @@ if (isset($_GET['edit'])) {
 
   <?php include 'modals/tambah_modal.php'; ?>
   <?php include 'modals/edit_modal.php'; ?>
+
+  <!-- Modal Konfirmasi Hapus -->
+  <div id="modal-hapus" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Konfirmasi Hapus</h2>
+        <span class="close-modal" onclick="closeModal('hapus')">&times;</span>
+      </div>
+      <p>Apakah Anda yakin ingin menghapus data siswa ini?</p>
+      <div class="btn-group">
+        <button class="btn danger" id="btn-hapus-ya">Ya, Hapus</button>
+        <button class="btn btn-back" onclick="closeModal('hapus')">Batal</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     flatpickr(".flatpickr", {
@@ -116,6 +131,19 @@ if (isset($_GET['edit'])) {
     function closeModal(type) {
       document.getElementById('modal-' + type).classList.remove('active');
     }
+
+    // Fungsi untuk modal hapus
+    let currentHapusId = null;
+    function openHapusModal(id) {
+      currentHapusId = id;
+      document.getElementById('modal-hapus').classList.add('active');
+    }
+    document.getElementById('btn-hapus-ya').addEventListener('click', function() {
+      if (currentHapusId !== null) {
+        window.location.href = 'hapus.php?id=' + currentHapusId;
+      }
+    });
+
     window.onclick = function(event) {
       if (event.target.classList.contains('modal')) {
         event.target.classList.remove('active');
